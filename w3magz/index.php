@@ -1,5 +1,5 @@
 <?php
-$template_url = get_bloginfo('template_url').'/';
+defined('ABSPATH') or die();
 get_header();?>
 
 		<div id="content">
