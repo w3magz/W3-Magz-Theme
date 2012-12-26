@@ -7,12 +7,18 @@ Author: takien.com, jeffri.net
 */
 
 /*begin*/
+@font-face {
+  font-family: 'Scada';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Scada'), local('Scada-Regular'), url(http://themes.googleusercontent.com/static/fonts/scada/v1/uIa9-L3o-vNXk-UyBI3PSw.woff) format('woff');
+}
 html{
-	/* background: #fff url('images/middle-repeat.png') repeat-y 50% 0; */
+
 }
 
 body{
-	/* background: url('images/middle.png') no-repeat 50% 124px; */
+	
 	 background-color: rgb(230, 233, 234);
 	font: 14px/22px Arial, sans-serif;
 	color: #464646;
@@ -35,7 +41,7 @@ img {
 	max-width:100%
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bell Gothic Std',Arial,sans-serif;
+    font-family: 'Scada','Bell Gothic Std',Arial,sans-serif;
     font-weight: 300;
     font-style: normal;
     color: rgb(34, 34, 34);
@@ -712,4 +718,3 @@ div[id^="___plusone_"] {
 		display: inline;
 	}
 }
-
