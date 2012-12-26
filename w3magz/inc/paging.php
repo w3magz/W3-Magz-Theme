@@ -1,4 +1,5 @@
 <?php
+defined('ABSPATH') or die();
 /*
 * WordPress paging,
 * @author: takien

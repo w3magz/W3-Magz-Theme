@@ -286,6 +286,11 @@ nav ul{
 	margin:10px 10px 10px 0;
 }
 
+.post-entry ul {
+	list-style-position:inside;
+	padding-left:12px;
+	text-indent:-15px;
+}
 h2.entry-title {
 	padding-left:10px;
 	border-left:1px solid #ffcc33;

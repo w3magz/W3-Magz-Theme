@@ -1,4 +1,6 @@
-	<div class="clear"></div>
+<?php
+defined('ABSPATH') or die();
+?>	<div class="clear"></div>
 	</div><!--middle-->	
 	<footer id="footer">
 		<div id="footer-wrapper">

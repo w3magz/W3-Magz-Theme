@@ -1,4 +1,5 @@
 <?php
+defined('ABSPATH') or die();
 /**
 * Easy get WordPress attachments image
 * @author : contact@takien.com

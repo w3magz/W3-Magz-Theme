@@ -1,4 +1,6 @@
 <?php
+defined('ABSPATH') or die();
+
 //add_theme_support('post-thumbnails');
 require_once(dirname(__FILE__).'/inc/easy-attachments.php');
 require_once(dirname(__FILE__).'/inc/paging.php');
