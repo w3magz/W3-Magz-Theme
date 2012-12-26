@@ -72,9 +72,10 @@ $template_url = get_bloginfo('template_url').'/'; ?>
 			?>
 		</div>
 	</div>
+	<?php /*
 	<div id="top-banner">
 		<img src="<?php echo $template_url;?>/images/top-banner.jpg" alt=""/>
 	</div>
-	
+	*/?>
 	<div id="middle">
 	

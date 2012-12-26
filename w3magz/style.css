@@ -286,6 +286,7 @@ nav ul{
 }
 .post-entry p{
 	margin: 0 0 20px;
+	text-align:justify;
 }
 .post-entry img {
 	float:left;
@@ -330,10 +331,23 @@ h2.entry-title {
 }
 
 /*img,caption*/
+div.wp-caption {
+	max-width:100% !important;
+	background:rgba(0,0,0,0.5);
+	border:1px solid #747474;
+	margin:10px 0 10px;
+	padding:3px;
+}
+.wp-caption img{
+	margin:0 0 10px
+}
 .wp-caption-text {
 	font-size:0.9em;
 	line-height:1.2em;
-	color:#8a8a8a
+	color:#fafafa;
+	padding:10px;
+	display:block;
+	margin:0 !important;
 }
 
 /*share etc*/
