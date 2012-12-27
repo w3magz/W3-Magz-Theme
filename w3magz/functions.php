@@ -2,6 +2,7 @@
 defined('ABSPATH') or die();
 
 //add_theme_support('post-thumbnails');
+require_once(dirname(__FILE__).'/inc/takien-plugin-options.php');
 require_once(dirname(__FILE__).'/inc/easy-attachments.php');
 require_once(dirname(__FILE__).'/inc/paging.php');
 
@@ -25,6 +26,58 @@ if(!function_exists('theme_option')) {
 		return false;
 	}
 }
+/*options caller*/
+function theme_option($key='',$option=''){
+	$return = get_option($option) ? get_option($option) : Array();
+	if($return[$key]){
+		return $return[$key];
+	}
+}
+
+/*theme options*/
+$theme_options                = new takienPluginOptions();
+$theme_options->option_group  = 'w3magz_options';
+$theme_options->menu_name     = 'w3magz Settings';
+$theme_options->menu_slug     = 'w3magz-settings';
+$theme_options->menu_location = 'add_menu_page';
+$theme_options->icon_big      = get_bloginfo('template_url').'/images/icon-setting.png';
+$theme_options->icon_small    = get_bloginfo('template_url').'/images/icon-setting-small.png';
+//$theme_options->add_tab     = true;
+$theme_options->position      = 100;
+
+$fields = Array(
+	Array(
+	'name'			=> 'facebook',
+	'label'			=> 'Facebook',
+	'type'			=> 'text',
+	'description'	=> 'Facebook URL.',
+	'value'			=> $theme_options->option('facebook')
+	),
+	Array(
+	'name'			=> 'twitter',
+	'label'			=> 'Twitter',
+	'type'			=> 'text',
+	'description'	=> 'Twitter URL',
+	'value'			=> $theme_options->option('twitter')
+	),
+	Array(
+	'name'			=> 'email',
+	'label'			=> 'Contact Email',
+	'type'			=> 'text',
+	'description'	=> 'Email for contact',
+	'value'			=> $theme_options->option('email')
+	),
+	Array(
+	'name'			=> 'fb_app_id',
+	'label'			=> 'Facebook App ID',
+	'type'			=> 'text',
+	'description'	=> 'Facebook App ID',
+	'value'			=> $theme_options->option('fb_app_id')
+	)
+
+
+);
+$theme_options->fields = $fields;
 
 function post_entry_meta(){
 	$twitter_username = end(explode('/',theme_option('twitter')));

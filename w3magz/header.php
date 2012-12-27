@@ -3,7 +3,8 @@ defined('ABSPATH') or die();
 $template_url = get_bloginfo('template_url').'/'; ?>
 <!DOCTYPE html>
 <html>
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# <?php echo is_singular() ? 'article: http://ogp.me/ns/article#': '';?>">
+		
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -25,17 +26,32 @@ $template_url = get_bloginfo('template_url').'/'; ?>
 		echo ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
 
 	?></title>
-	<meta charset="utf-8" />
-	<!--[if lt IE 9]>
-	<script src="<?php echo $template_url;?>js/html5.js" type="text/javascript"></script>
-	<![endif]-->
-	<link href="<?php echo $template_url;?>css/normalize.css" rel="stylesheet" />
-	<link href="<?php echo $template_url;?>css/foundation.css" rel="stylesheet" />
+<?php
+	$fbapp = get_option('facebook_application');
+?>
+<meta charset="utf-8" />
+<!--[if lt IE 9]>
+<script src="<?php echo $template_url;?>js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<link href="<?php echo $template_url;?>css/normalize.css" rel="stylesheet" />
+<link href="<?php echo $template_url;?>css/foundation.css" rel="stylesheet" />
+
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	<?php wp_head();?>
-	<link href="<?php echo $template_url;?>style.css" rel="stylesheet" />
+	<?php
+		$img = post_image('thumbnail',$post->ID);
+		if(is_singular() AND !empty($img['src'])) {
+			$og_image = $img['src'];
+		}
+		else {
+			$og_image = site_url('/images/logo-128x128.jpg');
+		}
+	?>
+<meta property="og:image"  content="<?php echo $og_image;?>" />
+<link href="<?php echo $template_url;?>style.css" rel="stylesheet" />
 </head>
+
 <body <?php body_class();?>>
 	<header id="header">
 		<div id="header-wrapper">
