@@ -20,9 +20,9 @@ get_header();?>
 						<?php post_entry_meta();?>
 					</div>
 				</header>
-				<div class="ads ads600x160">
+				<!--<div class="ads ads600x160">
 					<img src="<?php bloginfo('template_url');?>/images/ads-160x600.png" alt=""/>
-				</div>
+				</div>-->
 				<?php the_content();?>
 			</article>
 			<?php the_tags();?>
