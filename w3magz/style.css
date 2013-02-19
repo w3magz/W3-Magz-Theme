@@ -315,19 +315,26 @@ h2.entry-title {
 	padding-bottom:2px;
 }
 /*common wp*/
-.alignleft{
+.alignleft {
 	float: left;
-	text-align: left;
 }
-.alignright{
+.alignright {
 	float: right;
-	text-align: right;
 }
-.aligncenter{
-	text-align: center;
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
-.thumbnail.alignleft {
-	margin:0 10px 10px 0;
+img.alignleft {
+	margin: 12px 24px 12px 0;
+}
+img.alignright {
+	margin: 12px 0 12px 24px;
+}
+img.aligncenter {
+	margin-top: 12px;
+	margin-bottom: 12px;
 }
 
 /*img,caption*/
